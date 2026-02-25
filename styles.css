@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+  font-family: sans-serif;
+}
+
+/* Status bar: errors left, time right */
+#status-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 450px; /* same width as board or adjust as needed */
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Optional: center text inside the divs */
+#error-counter, #time-counter {
+  text-align: center;
+}
+
+#sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 50px);
+  grid-template-rows: repeat(9, 50px);
+}
+
+/* Cada celda */
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #999;
+  text-align: center;
+  font-size: 20px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Vertical separators */
+
+/* Left edge */
+.cell:nth-child(9n + 1) {
+  border-left: 3px solid black;
+}
+
+/* After column 3 and 6 */
+.cell:nth-child(9n + 3),
+.cell:nth-child(9n + 6) {
+  border-right: 3px solid black;
+}
+
+/* Right edge */
+.cell:nth-child(9n) {
+  border-right: 3px solid black;
+}
+
+/* Horizontal separators */
+
+/* Top edge (row 1) */
+.cell:nth-child(-n + 9) {
+  border-top: 3px solid black;
+}
+
+/* After row 3 (cells 19–27) */
+.cell:nth-child(n + 19):nth-child(-n + 27),
+/* After row 6 (cells 46–54) */
+.cell:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 3px solid black;
+}
+
+/* Bottom edge (row 9, cells 73–81) */
+.cell:nth-child(n + 73):nth-child(-n + 81) {
+  border-bottom: 3px solid black;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nan's Sudoku</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="sudoku-container">
+    <div id="status-bar">
+      <div id="error-counter">Errors: 0</div>
+      <div id="time-counter">Time: 00:00</div>
+    </div>
+
+    <div id="sudoku-board"></div>
+  </div>
+
+  <!-- loading order is important -->
+  <script src="./src/mutations.js"></script>
+  <script src="./src/boards.js"></script>
+  <script src="./src/main.js"></script>
+</body>
+
+</html>
